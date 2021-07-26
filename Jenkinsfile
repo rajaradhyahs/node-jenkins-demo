@@ -17,7 +17,7 @@ pipeline {
         stage('Build and push docker image') {
             steps {
                 script {
-                    def dockerImage = docker.build("antonml/node-demo:master")
+                    def dockerImage = docker.build("rajaradhyahs/node-demo:master")
                     docker.withRegistry('', 'demo-docker') {
                         dockerImage.push('master')
                     }
@@ -31,12 +31,12 @@ pipeline {
             steps {
                 script {
 //                     sh 'docker login -u $DOCKER_HOST_CREDENTIALS_USR -p $DOCKER_HOST_CREDENTIALS_PSW 127.0.0.1:2375'
-                    sh 'docker pull antonml/node-demo:master'
+                    sh 'docker pull rajaradhyahs/node-demo:master'
                     sh 'docker stop node-demo'
                     sh 'docker rm node-demo'
-                    sh 'docker rmi antonml/node-demo:current'
-                    sh 'docker tag antonml/node-demo:master antonml/node-demo:current'
-                    sh 'docker run -d --name node-demo -p 80:3000 antonml/node-demo:current'
+                    sh 'docker rmi rajaradhyahs/node-demo:current'
+                    sh 'docker tag rajaradhyahs/node-demo:master rajaradhyahs/node-demo:current'
+                    sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
                 }
             }
         }
