@@ -39,7 +39,7 @@ pipeline {
                     def dockerImage = docker.build("rajaradhyahs/node-demo:master")
 
 
-                    docker.withRegistry('http://localhost:8080/', 'rajaradhyahs') {
+                    docker.withRegistry('https://hub.docker.com/', 'rajaradhyahs') {
 
                         dockerImage.push('master')
 
