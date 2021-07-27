@@ -55,7 +55,7 @@ pipeline {
 
             environment {
 
-                DOCKER_HOST_CREDENTIALS = credentials('demo-docker')
+                DOCKER_HOST_CREDENTIALS = credentials('rajaradhyahs')
 
             }
 
