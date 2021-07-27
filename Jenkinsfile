@@ -36,7 +36,7 @@ pipeline {
 
                 script {
 
-                    def dockerImage = docker.build("rajaradhyahs/node-demo:master")
+                    def dockerImage = sudo docker.build("rajaradhyahs/node-demo:master")
 
 
                     docker.withRegistry('', 'demo-docker') {
