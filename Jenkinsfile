@@ -35,13 +35,10 @@ pipeline {
             steps {
 
                 script {
-<<<<<<< HEAD
 
                     def dockerImage = docker.build("rajaradhyahs/node-demo:master")
 
-=======
                     def dockerImage = docker.build("rajaradhyahs/node-demo:master")
->>>>>>> 567222d9f24e9917b8288b2a1b17f5a41f67be20
                     docker.withRegistry('', 'demo-docker') {
 
                         dockerImage.push('master')
@@ -67,17 +64,13 @@ pipeline {
                 script {
 
 //                     sh 'docker login -u $DOCKER_HOST_CREDENTIALS_USR -p $DOCKER_HOST_CREDENTIALS_PSW 127.0.0.1:2375'
-<<<<<<< HEAD
 
                     sh 'docker pull rajaradhyahs/node-demo:master'
 
-=======
                     sh 'docker pull rajaradhyahs/node-demo:master'
->>>>>>> 567222d9f24e9917b8288b2a1b17f5a41f67be20
                     sh 'docker stop node-demo'
 
                     sh 'docker rm node-demo'
-<<<<<<< HEAD
 
                     sh 'docker rmi rajaradhyahs/node-demo:current'
 
@@ -85,11 +78,9 @@ pipeline {
 
                     sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
 
-=======
                     sh 'docker rmi rajaradhyahs/node-demo:current'
                     sh 'docker tag rajaradhyahs/node-demo:master rajaradhyahs/node-demo:current'
                     sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
->>>>>>> 567222d9f24e9917b8288b2a1b17f5a41f67be20
                 }
 
             }
@@ -97,8 +88,4 @@ pipeline {
         }
 
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 567222d9f24e9917b8288b2a1b17f5a41f67be20
 }
