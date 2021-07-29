@@ -106,7 +106,7 @@ pipeline {
 
             environment {
 
-                DOCKER_HOST_CREDENTIALS = credentials('rajaradhyahs')
+                DOCKER_HOST_CREDENTIALS = credentials('dockerHub')
 
             }
 
