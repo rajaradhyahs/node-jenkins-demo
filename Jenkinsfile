@@ -80,7 +80,7 @@ pipeline {
 
 
 
-                    docker.withRegistry('', 'rajaradhyahs') {
+                    docker.withRegistry('', registryCredential) {
 
 
 
