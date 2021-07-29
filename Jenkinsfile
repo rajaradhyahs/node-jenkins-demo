@@ -110,6 +110,7 @@ pipeline {
 
             }
 
+
             steps {
 
                 script {
@@ -133,13 +134,6 @@ pipeline {
 
                     sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
 
-
-
-                    sh 'docker rmi rajaradhyahs/node-demo:current'
-
-                    sh 'docker tag rajaradhyahs/node-demo:master rajaradhyahs/node-demo:current'
-
-                    sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
 
 
                 }
