@@ -113,6 +113,34 @@ pipeline {
             steps {
 
                 script {
+                    sh 'docker pull rajaradhyahs/node-demo:master'
+
+                    sh 'docker stop node-demo'
+
+
+
+                    sh 'docker rm node-demo'
+
+
+
+                    sh 'docker rmi rajaradhyahs/node-demo:current'
+
+
+
+                    sh 'docker tag rajaradhyahs/node-demo:master rajaradhyahs/node-demo:current'
+
+
+
+                    sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
+
+
+
+                    sh 'docker rmi rajaradhyahs/node-demo:current'
+
+                    sh 'docker tag rajaradhyahs/node-demo:master rajaradhyahs/node-demo:current'
+
+                    sh 'docker run -d --name node-demo -p 80:3000 rajaradhyahs/node-demo:current'
+
 
                 }
 
