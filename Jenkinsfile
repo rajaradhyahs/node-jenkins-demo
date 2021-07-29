@@ -102,29 +102,23 @@ pipeline {
 
         }
 
-
-
         stage('Deploy to remote docker host') {
-
-
 
             environment {
 
-
-
-                DOCKER_HOST_CREDENTIALS = credentials('https://hub.docker.com/')
-
-
+                DOCKER_HOST_CREDENTIALS = credentials('rajaradhyahs')
 
             }
 
+            steps {
 
+                script {
 
+                }
 
+            }
 
         }
-
-
 
     }
 
