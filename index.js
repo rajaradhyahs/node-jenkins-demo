@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 app.get('/will', function (req, res) {
-    res.send('{ "response": "Hello World From Simplilearn" }');
+    res.send('{ "response": "Hello World From  Simplilearn" }');
 });
 app.get('/ready', function (req, res) {
     res.send('{ "response": "It works!" }');
